@@ -29,6 +29,7 @@
 # Intellij Files
 .metadata/
 .idea/
+.idea
 **/*.iml
 
 
