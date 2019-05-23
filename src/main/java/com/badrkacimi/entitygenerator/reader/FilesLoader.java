@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 public class FilesLoader {
 
     private static final String[] EXTENSIONS = new String[]{"json"};
+
     private static final Logger LOGGER = Logger.getLogger(String.valueOf(FilesLoader.class));
 
     public static List<File> gettingJsonFiles(File file) throws IOException {

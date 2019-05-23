@@ -1,34 +1,22 @@
 package com.badrkacimi.entitygenerator.generator;
 
-import com.badrkacimi.entitygenerator.mapper.ToClassMapper;
+import com.badrkacimi.entitygenerator.mapper.ToClassesMapper;
+import com.badrkacimi.entitygenerator.reader.FilesLoader;
 
 import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.io.IOException;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class ClassesGenerator {
 
-    private static final Logger LOGGER = Logger.getLogger(String.valueOf(ClassesGenerator.class));
 
+    private static final File DIRECTORY = new File("./src/main/resources/json/json-files");
 
-    public static void convertingJsonToPojo( List<File> files) throws MalformedURLException {
-        int i =0;
-        for (File file : files) {
-            URL inputjson = file.toURI().toURL();
-            String className = file.getName().replace(".json", "");
+    public static void classesGenerator() throws IOException {
 
-            try {
-                ToClassMapper.convertToJavaClass(inputjson, className);
-                i++;
+        List<File> files = FilesLoader.gettingJsonFiles(DIRECTORY);
 
+        ToClassesMapper.convertingJsonToPojo(files);
 
-            } catch (Exception e) {
-                LOGGER.info("Encountered issue while converting to pojo: " + e.getMessage());
-            }
-
-        }
-        LOGGER.info("Number of POJOs converted & created: " + " " + (i));
     }
 }
