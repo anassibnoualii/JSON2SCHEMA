@@ -13,7 +13,7 @@ public class FilesLoader {
     private static final Logger LOGGER = Logger.getLogger(String.valueOf(FilesLoader.class));
 
     public static List<File> gettingJsonFiles(File file) throws IOException {
-        LOGGER.info("Obtenir tous les json... " + file.getCanonicalPath() + " y compris ceux dans les sous-repertoires");
+        LOGGER.info("Getting all json files ... " + file.getCanonicalPath() + " including subdirectory files");
         return (List<File>) FileUtils.listFiles(file, EXTENSIONS, true);
 
     }

@@ -17,10 +17,10 @@ public class ClassesGenerator {
         int i =0;
         for (File file : files) {
             URL inputjson = file.toURI().toURL();
-            String className = file.getName();
+            String className = file.getName().replace(".json", "");
 
             try {
-                ToClassMapper.convertToJavaClass(inputjson, className.replace(".json", ""));
+                ToClassMapper.convertToJavaClass(inputjson, className);
                 i++;
 
 
@@ -29,6 +29,6 @@ public class ClassesGenerator {
             }
 
         }
-        LOGGER.info("Nombre de POJOs converted & created: " + " " + (i));
+        LOGGER.info("Number of POJOs converted & created: " + " " + (i));
     }
 }
