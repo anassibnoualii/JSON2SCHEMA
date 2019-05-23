@@ -1,21 +1,15 @@
 		package com.badrkacimi.schemagenerator;
-		
-		import java.io.BufferedWriter;
-		import java.io.File;
-		import java.io.FileWriter;
-		import java.io.IOException;
-		import java.io.StringWriter;
-		import java.net.URL;
-		import java.util.ArrayList;
-		import java.util.Enumeration;
-		import java.util.List;
-		
-		import com.fasterxml.jackson.core.JsonGenerationException;
-		import com.fasterxml.jackson.databind.JsonMappingException;
+
 		import com.fasterxml.jackson.databind.ObjectMapper;
 		import com.fasterxml.jackson.databind.SerializationFeature;
 		import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
 		import com.fasterxml.jackson.module.jsonSchema.JsonSchemaGenerator;
+
+		import java.io.*;
+		import java.net.URL;
+		import java.util.ArrayList;
+		import java.util.Enumeration;
+		import java.util.List;
 		
 		/**
 	     *Author Badr Kacimi
